@@ -1,7 +1,11 @@
 "use client";
 
+import axios from "axios";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+
 import {
   Dialog,
   DialogContent,
@@ -10,7 +14,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
@@ -21,22 +24,27 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 import { FileUpload } from "@/components/file-upload";
+import { useRouter } from "next/navigation";
+
 const formSchema = z.object({
   name: z.string().min(1, {
-    message: "Sercer name is required",
+    message: "Server name is required.",
   }),
   imageUrl: z.string().min(1, {
-    message: "Server image is required",
+    message: "Server image is required.",
   }),
 });
 
-export const InitialModel = () => {
+export const InitialModal = () => {
   const [isMounted, setIsMounted] = useState(false);
+
+  const router = useRouter();
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,13 +52,25 @@ export const InitialModel = () => {
       imageUrl: "",
     },
   });
+
   const isLoading = form.formState.isSubmitting;
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    try {
+      await axios.post("/api/servers", values);
+
+      form.reset();
+      router.refresh();
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   if (!isMounted) {
     return null;
   }
+
   return (
     <Dialog open>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
@@ -61,7 +81,6 @@ export const InitialModel = () => {
           <DialogDescription className="text-center text-zinc-500">
             Give your server a personality with a name and an image. You can
             always change it later.
-            {/* 서버에 이름과 이미지가 포함된 개인 정보를 지정합니다. 나중에 언제든지 변경할 수 있습니다. */}
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -82,8 +101,9 @@ export const InitialModel = () => {
                       </FormControl>
                     </FormItem>
                   )}
-                ></FormField>
+                />
               </div>
+
               <FormField
                 control={form.control}
                 name="name"
@@ -98,14 +118,14 @@ export const InitialModel = () => {
                         className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
                         placeholder="Enter server name"
                         {...field}
-                      ></Input>
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
             </div>
-            <DialogFooter className="bg-grahy-100  px-6 py-4">
+            <DialogFooter className="bg-gray-100 px-6 py-4">
               <Button variant="primary" disabled={isLoading}>
                 Create
               </Button>
