@@ -7,6 +7,7 @@ react,typescript,prisma, tailwind  ,socket
 
 
 작업 히스토리
+23-11-20
 - 서버 초대 기능 추가 (진행중)
 - 서버 사이드바 추가 완료
 - 기본 레이아웃 설정
