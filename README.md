@@ -19,4 +19,4 @@ react,typescript,prisma, tailwind  ,socket
 - 기본 레이아웃 설정
   
 23-11-13
-- 각종 플로그인설치 
+- 각종 플로그인 설치 
