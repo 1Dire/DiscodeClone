@@ -4,3 +4,9 @@
 
 작업진행중 
 react,typescript,prisma, tailwind  ,socket
+
+
+작업 히스토리
+- 서버 초대 기능 추가 (진행중)
+- 서버 사이드바 추가 완료
+- 각종 플로그인설치 
