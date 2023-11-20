@@ -8,6 +8,7 @@ react,typescript,prisma, tailwind  ,socket
 
 작업 히스토리
 23-11-20
+- 멤버 관리 기능 추가
 - 서버 헤더 설정 추가
 - 서버 초대 기능 추가 
 - 서버 사이드바 추가 완료
