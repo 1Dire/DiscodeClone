@@ -7,7 +7,8 @@ react,typescript,prisma, tailwind  ,socket
 
 
 📝 작업 히스토리
-
+23-11-22
+- 서버 검색 기능 추가
 23-11-21
 - 서버 삭제 추가
 - 서버 나가기 기능 추가
