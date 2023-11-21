@@ -8,7 +8,9 @@ react,typescript,prisma, tailwind  ,socket
 
 📝작업 히스토리
 
-
+23-11-21
+- 서버 채널 추가
+- 서버 나가기 기능 추가
 23-11-20
 - 멤버 관리 기능 추가
 - 서버 헤더 설정 추가
