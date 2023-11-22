@@ -8,6 +8,10 @@ react,typescript,prisma, tailwind  ,socket
 
 📝 작업 히스토리
 
+23-11-23
+- 채팅 헤더 추가
+- 사이드바 반응형 작업 진행중
+
 23-11-22
 - 서버 검색 기능 추가
 
