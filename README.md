@@ -9,6 +9,7 @@ react,typescript,prisma, tailwind  ,socket
 📝 작업 히스토리
 
 23-11-23
+- socket.io 연동 추가 
 - 사용자 페이지 추가
 - db 수정
 - 채팅 헤더 추가
