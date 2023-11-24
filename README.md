@@ -2,11 +2,15 @@
 
 서버,채널, 메세지, 유저관리, 화상통화(livekit),socket까지
 
-작업진행중 
+ 
 NEXT.js 13v
+
 Prisma 5v
+
 tailwind 3.3v
+
 socket 4.7v
+
 livekit
 
 
