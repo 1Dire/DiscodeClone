@@ -7,6 +7,7 @@ react,typescript,prisma, tailwind  ,socket
 
 
 📝 작업 히스토리
+
 23-11-24
 - next.js 버전 변경   14 -> 13.4.12
 - 채팅창 인풋 추가 
@@ -15,6 +16,7 @@ react,typescript,prisma, tailwind  ,socket
 - 메세지 뷰 설정
 - 메세지 삭제 추가
 - 메세지 live 보기 추가
+  
 23-11-23
 - socket.io 연동 추가 
 - 사용자 페이지 추가
